@@ -71,15 +71,7 @@ public class TestHeapSort {
     }
 
     public static void main(String[] args) {
-        int N = 100000;
-        int[] sequence = new int[N];
-        Random random = new Random();
-
-        
-
-        for (int i = 0; i < N; i++) {
-            sequence[i] = Math.abs(random.nextInt(1000));
-        }
+        final int sequence[] = new Random().ints(1, 100000).distinct().limit(99999).toArray(); 
 
        
         sort(sequence);

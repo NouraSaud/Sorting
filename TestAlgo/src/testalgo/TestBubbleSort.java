@@ -14,29 +14,26 @@ import java.util.Random;
 public class TestBubbleSort {
    
     public static void main(String[] args) {
-         int n, c, d, swap;
+         int  c, d, swap;
 
-        n = 10000;
-        int array[] = new int[n];
-        Random r = new Random();
-        for (int i = 0; i < array.length; i++) {
-            array[i] = r.nextInt(100);
-        }
-
-        for (c = 0; c < (n - 1); c++) {
-            for (d = 0; d < n - c - 1; d++) {
-                if (array[d] > array[d + 1]) /* For descending order use < */ {
-                    swap = array[d];
-                    array[d] = array[d + 1];
-                    array[d + 1] = swap;
+        
+        final int n[] = new Random().ints(1, 100000).distinct().limit(99999).toArray();         //array of unique numbers           
+         
+ 
+        for (c = 0; c < (n.length - 1); c++) {
+            for (d = 0; d < n.length - c - 1; d++) {
+                if (n[d] > n[d + 1]) /* For descending order use < */ {
+                    swap = n[d];
+                    n[d] = n[d + 1];
+                    n[d + 1] = swap;
                 }
             }
         }
 
       
 
-        for (c = 0; c < n; c++) {
-            System.out.print(array[c] + " ");
+        for (c = 0; c < n.length; c++) {
+            System.out.print(n[c] + " ");
         }
     }
 }

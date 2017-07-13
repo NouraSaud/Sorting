@@ -22,11 +22,7 @@ public class TestRadixSort {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
 
-        int[] num = new int[100000];
-        Random r = new Random();
-        for(int i = 0; i < num.length;i++){
-            num[i] = r.nextInt(100);
-        }
+        final int num[] = new Random().ints(1, 100000).distinct().limit(99999).toArray(); 
 
         radixsort(num);
 

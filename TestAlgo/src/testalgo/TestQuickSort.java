@@ -50,11 +50,7 @@ public class TestQuickSort {
     }
 
     public static void main(String[] args) {
-        int[] x = new int[10000];
-        Random r = new Random();
-        for (int i = 0; i < x.length; i++) {
-            x[i] = r.nextInt(100);
-        }
+        final int x[] = new Random().ints(1, 100000).distinct().limit(99999).toArray(); 
        
         quickSort(x);
        // System.out.print("\nAfter Sorting: ");

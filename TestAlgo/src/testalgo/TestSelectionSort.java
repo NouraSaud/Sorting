@@ -5,6 +5,8 @@
  */
 package testalgo;
 
+import java.util.Random;
+
 /*
 1. Get a list of unsorted numbers
 2. Set a marker for the unsorted section at the front of the list
@@ -18,20 +20,11 @@ public class TestSelectionSort {
 
     public static void main(String[] args) {
 
-        // Create an array of 100 integers.
-        int[] intArray = new int[100000];
-
-        // Fill the array with random integers in a 
-        // specified range.
-        randomFillArray(intArray, 1, 100000);
-
-        // Print out the array.
-        System.out.println("Before Sorting:");
-        printArray(intArray);
-        // Sort the array.
+        
+        final int intArray[] = new Random().ints(1, 100000).distinct().limit(99999).toArray(); 
+        
         sortArray(intArray);
-        // Print out the array.
-        System.out.println("\nAfter Sorting:");
+        
         printArray(intArray);
     }
 
@@ -113,9 +106,8 @@ public class TestSelectionSort {
      */
     static void randomFillArray(int[] fillMe, int min, int max) {
 
-        for (int i = 0; i < fillMe.length; i++) {
-            fillMe[i] = randomInt(min, max);
-        }
+          final int n[] = new Random().ints(1, 100000).distinct().limit(99999).toArray(); 
+        
     }
 
     /**
